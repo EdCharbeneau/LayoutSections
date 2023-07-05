@@ -1,0 +1,21 @@
+﻿@page "/"
+@using LayoutSections.Features.SocialFeedView.Components
+@layout ThreeColumnLayout
+
+<SectionContent SectionId="MainLayout.Sections.Header">
+    <h1>Social Media Stream</h1>
+</SectionContent>
+
+<SectionContent SectionId="ThreeColumnLayout.Sections.Alt">
+    <SampleNavigation/>
+</SectionContent>
+<SectionContent SectionId="ThreeColumnLayout.Sections.Main">
+    <SampleDataList/>
+</SectionContent>
+<SectionContent SectionId="ThreeColumnLayout.Sections.Aside">
+    <SampleShare/>
+</SectionContent>
+
+<SectionContent SectionId="MainLayout.Sections.Footer">
+    <p>This message was added to the footer from the Index page</p>
+</SectionContent>

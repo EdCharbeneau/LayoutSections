@@ -1,0 +1,44 @@
+﻿@inherits LayoutComponentBase
+@layout MainLayout
+
+<div class="grid">
+    <nav>
+        <SectionOutlet SectionId="Sections.Nav" />
+    </nav>
+    <div>
+        <SectionOutlet SectionId="Sections.Side" />
+    </div>
+    <main>
+        <SectionOutlet SectionId="Sections.Main" />
+        @Body
+    </main>
+</div>
+
+@code {
+
+    /// <summary>
+    /// Sections for the TwoColumnLayout.
+    /// Uses MainLayout.
+    /// </summary>
+    internal static class Sections
+    {   
+        /// <summary>
+        /// An element representing the layout's navigation column.
+        /// This nav element should contain navigation for this layout.
+        /// </summary>
+        internal static SectionOutlet? Nav = new();
+
+        /// <summary>
+        /// An element representing the layout's first column.
+        /// This element has no semantic meanding. When using this section be sure to specify a semantic element for accessibility.
+        /// </summary>
+        internal static SectionOutlet? Side = new();
+        
+        /// <summary>
+        /// A &lt;main&gt;&lt;/main&gt; element representing the layout's second column.
+        /// Default, uses the Body of the layout component.
+        /// </summary>
+        internal static SectionOutlet? Main = new();
+
+    }
+}

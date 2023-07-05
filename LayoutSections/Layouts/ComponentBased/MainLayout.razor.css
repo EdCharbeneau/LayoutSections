@@ -1,0 +1,26 @@
+﻿.wrapper {
+    /* push footer to the bottom of the page */
+    height: 100%;
+}
+::deep .grid-container {
+    /* push footer to the bottom of the page */
+    min-height: 100%;
+    background: whitesmoke;
+}
+
+.container {
+    /* maintian whitespace around content*/
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+}
+header {
+    background: #34ace0;
+    padding: 1rem;
+}
+
+footer {
+    background: #227093;
+    padding: 1rem;
+    color:white;
+}

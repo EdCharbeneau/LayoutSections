@@ -1,0 +1,62 @@
+﻿<h2>Trending</h2>
+<TelerikTreeView Data="@HierarchicalData" @bind-ExpandedItems="@ExpandedItems">
+    <TreeViewBindings>
+        <TreeViewBinding TextField="Category" ItemsField="Products"></TreeViewBinding>
+        <TreeViewBinding Level="1" TextField="ProductName"></TreeViewBinding>
+    </TreeViewBindings>
+</TelerikTreeView>
+
+@code {
+    public IEnumerable<ProductCategoryItem> HierarchicalData { get; set; }
+    public IEnumerable<object> ExpandedItems { get; set; }
+
+    public class ProductCategoryItem
+    {
+        public string Category { get; set; }
+        public List<ProductItem> Products { get; set; }
+    }
+
+    public class ProductItem
+    {
+        public string ProductName { get; set; }
+    }
+
+    protected override void OnInitialized()
+    {
+        LoadHierarchical();
+    }
+
+    private void LoadHierarchical()
+    {
+        List<ProductItem> beverages = new List<ProductItem>()
+        {
+            new ProductItem { ProductName = "Lindsey Mango" },
+            new ProductItem { ProductName = "Vincenzo Mays" },
+            new ProductItem { ProductName = "Marissa Webb" }
+        };
+
+        List<ProductItem> condiments = new List<ProductItem>()
+        {
+            new ProductItem { ProductName = "Lindsey Mango" },
+            new ProductItem { ProductName = "Vincenzo Mays" },
+            new ProductItem { ProductName = "Marissa Webb" }
+        };
+
+        List<ProductCategoryItem> roots = new List<ProductCategoryItem>();
+
+        roots.Add(new ProductCategoryItem
+            {
+                Category = "Photography",
+                Products = beverages
+            });
+
+        roots.Add(new ProductCategoryItem
+            {
+                Category = "Animals",
+                Products = condiments
+            });
+
+        HierarchicalData = roots;
+        ExpandedItems = roots.Take(1);
+    }
+}

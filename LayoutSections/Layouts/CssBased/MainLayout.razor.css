@@ -1,0 +1,29 @@
+﻿.wrapper {
+    /* push footer to the bottom of the page */
+    height: 100%;
+}
+.container {
+    /* maintian whitespace around content*/
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+}
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap:2rem;
+    /* push footer to the bottom of the page */
+    min-height: 100%;
+    background: whitesmoke;
+}
+
+header {
+    background: #34ace0;
+    padding: 1rem;
+}
+
+footer {
+    background: #227093;
+    padding: 1rem;
+    color:white;
+}

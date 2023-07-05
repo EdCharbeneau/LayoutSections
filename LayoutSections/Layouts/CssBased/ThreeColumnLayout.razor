@@ -1,0 +1,47 @@
+﻿@inherits LayoutComponentBase
+@layout MainLayout
+
+<div class="grid">
+    <section class="sidebar">
+        <SectionOutlet SectionId="Sections.Alt" />
+        <div class="profile-avatar">
+            <a href="/profile">
+                <TelerikAvatar Type="AvatarType.Icon" Size="@ThemeConstants.Button.Size.Large">
+                    <span class="k-icon k-i-user"></span>
+                </TelerikAvatar>
+                <span>Your Name</span>
+            </a>
+        </div>
+    </section>
+    <main>
+        <SectionOutlet SectionId="Sections.Main" />
+        @Body
+    </main>
+    <aside>
+        <SectionOutlet SectionId="Sections.Aside" />
+    </aside>
+</div>
+
+@code {
+
+    /// <summary>
+    /// Sections for the ThreeColumnLayout.
+    /// Uses MainLayout.
+    /// </summary>
+    internal static class Sections
+    {
+        /// <summary>
+        /// A &lt;section&gt;&lt;/section&gt; element representing the layout's first column.
+        /// </summary>
+        internal static SectionOutlet? Alt = new();
+        /// <summary>
+        /// A &lt;main&gt;&lt;/main&gt; element representing the layout's middle column.
+        /// Default, uses the Body of the layout component.
+        /// </summary>
+        internal static SectionOutlet? Main = new();
+        /// <summary>
+        /// An &lt;aside&gt;&lt;/aside&gt; element representing the layout's second column.
+        /// </summary>
+        internal static SectionOutlet? Aside = new();
+    }
+}

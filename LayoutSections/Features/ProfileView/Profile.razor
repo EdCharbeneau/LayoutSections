@@ -1,0 +1,21 @@
+﻿@page "/profile"
+@layout TwoColumnLayout
+@using LayoutSections.Features.ProfileView.Components
+
+<SectionContent SectionId="MainLayout.Sections.Header">
+    <h1>Profile Page</h1>
+</SectionContent>
+
+<SectionContent SectionId="TwoColumnLayout.Sections.Nav">
+</SectionContent>
+
+<AvatarUpload />
+<ProfileEditor />
+
+<SectionContent SectionId="TwoColumnLayout.Sections.Side">
+    <ProfileNavigation />
+</SectionContent>
+
+<SectionContent SectionId="MainLayout.Sections.Footer">
+    Set from the profile page.
+</SectionContent>

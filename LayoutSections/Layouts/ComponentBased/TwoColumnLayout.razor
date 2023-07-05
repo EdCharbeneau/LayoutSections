@@ -1,0 +1,34 @@
+﻿@inherits LayoutComponentBase
+@layout MainLayout
+<TelerikGridLayout ColumnSpacing="2rem" >
+    <GridLayoutColumns>
+        <GridLayoutColumn Width="3fr" />
+        <GridLayoutColumn Width="5fr" />
+    </GridLayoutColumns>
+    <GridLayoutItems>
+       
+        <GridLayoutItem>
+            <aside>
+                <SectionOutlet SectionId="Sections.Aside" />
+            </aside>
+            <nav>
+                <SectionOutlet SectionId="Sections.Nav" />
+            </nav>
+        </GridLayoutItem> 
+        <GridLayoutItem>
+            <article>
+                <SectionOutlet SectionId="Sections.Body" />
+                @Body
+            </article>
+        </GridLayoutItem>
+    </GridLayoutItems>
+</TelerikGridLayout>
+
+@code {
+    internal static class Sections
+    {
+        internal static SectionOutlet? Body = new();
+        internal static SectionOutlet? Aside = new();
+        internal static SectionOutlet? Nav = new();
+    }
+}

@@ -1,0 +1,58 @@
+﻿@inherits LayoutComponentBase
+
+<TelerikRootComponent>
+        <TelerikGridLayout RowSpacing="2rem" Class="grid-container">
+            <GridLayoutRows>
+                <GridLayoutRow Height="auto" />
+                <GridLayoutRow Height="1fr" />
+                <GridLayoutRow Height="auto" />
+            </GridLayoutRows>
+            <GridLayoutItems>
+                <GridLayoutItem>
+                    <header>
+                        <div class="container">
+                            <SectionOutlet SectionId="Sections.Header" />
+                        </div>
+                    </header>
+                </GridLayoutItem>
+                <GridLayoutItem>
+                    <div class="container">
+                        <SectionOutlet SectionId="Sections.Body" />
+                        @Body
+                    </div>
+                </GridLayoutItem>
+                <GridLayoutItem>
+                    <footer>
+                        <div class="container">
+                            <p>Copyright © 2023 Example Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+                            <SectionOutlet SectionId="Sections.Footer" />
+                        </div>
+                    </footer>
+                </GridLayoutItem>
+            </GridLayoutItems>
+        </TelerikGridLayout>
+</TelerikRootComponent>
+
+@code {
+
+    /// <summary>
+    /// Sections for the MainLayout
+    /// </summary>
+    internal static class Sections
+    {
+        /// <summary>
+        /// The root &lt;header&gt;&lt;/header&gt; element of the application
+        /// </summary>
+        internal static SectionOutlet? Header = new();
+        /// <summary>
+        /// The root content container of the document.
+        /// This element has no semantic meanding. When using this section be sure to specify a main element for accessibility.
+        /// Default, uses the Body of the layout component.
+        /// </summary>
+        internal static SectionOutlet? Body = new();
+        /// <summary>
+        /// The root &lt;footer&gt;&lt;/footer&gt; of the application
+        /// </summary>
+        internal static SectionOutlet? Footer = new();
+    }
+}
